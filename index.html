@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استبيان تقييم الورشة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div id="form-section">
+        <h1>📝 استبيان تقييم</h1>
+
+        <p><strong>ورشة السلوكيات الخطرة (التدخين والكحول)</strong><br>
+        ورشة قُدّمت من قبل طلاب صف الثامن بالتعاون مع المستشارة التربوية</p>
+
+        <p>عزيزي الطالب/عزيزتي الطالبة،<br>
+        نرجو تعبئة هذا الاستبيان بكل صدق. الهدف هو تطوير فعاليات أفضل لكم.</p>
+
+        <form id="surveyForm">
+
+            <h3>القسم الأول: تقييم عام للورشة</h3>
+
+            <div class="question">
+                <p>1. كيف تقيم/ين الورشة بشكل عام؟ *</p>
+                <label><input type="radio" name="q1" value="ممتازة"> ممتازة</label>
+                <label><input type="radio" name="q1" value="جيدة جدًا"> جيدة جدًا</label>
+                <label><input type="radio" name="q1" value="جيدة"> جيدة</label>
+                <label><input type="radio" name="q1" value="متوسطة"> متوسطة</label>
+                <label><input type="radio" name="q1" value="غير مرضية"> غير مرضية</label>
+            </div>
+
+            <div class="question">
+                <p>2. إلى أي مدى كان الشرح واضحًا ومفهومًا؟ *</p>
+                <label><input type="radio" name="q2" value="واضح جدًا"> واضح جدًا</label>
+                <label><input type="radio" name="q2" value="واضح"> واضح</label>
+                <label><input type="radio" name="q2" value="مقبول"> مقبول</label>
+                <label><input type="radio" name="q2" value="غير واضح"> غير واضح</label>
+            </div>
+
+            <div class="question">
+                <p>3. هل شعرت أن الموضوع مهم لحياتك؟ *</p>
+                <label><input type="radio" name="q3" value="مهم جدًا"> مهم جدًا</label>
+                <label><input type="radio" name="q3" value="مهم"> مهم</label>
+                <label><input type="radio" name="q3" value="إلى حد ما"> إلى حد ما</label>
+                <label><input type="radio" name="q3" value="غير مهم"> غير مهم</label>
+            </div>
+
+            <div class="question">
+                <p>4. هل تعلمت معلومات جديدة عن أضرار التدخين والكحول؟ *</p>
+                <label><input type="radio" name="q4" value="نعم، كثيرًا"> نعم، كثيرًا</label>
+                <label><input type="radio" name="q4" value="نعم، بعض الشيء"> نعم، بعض الشيء</label>
+                <label><input type="radio" name="q4" value="قليلًا"> قليلًا</label>
+                <label><input type="radio" name="q4" value="لا"> لا</label>
+            </div>
+
+            <h3>القسم الثاني: التعلم مع طلاب من صف الثامن</h3>
+
+            <div class="question">
+                <p>5. كيف كان شعورك أن طلاب صف ثامن هم من قدموا الورشة؟ *</p>
+                <label><input type="radio" name="q5" value="أعجبني جدًا"> أعجبني جدًا</label>
+                <label><input type="radio" name="q5" value="أعجبني"> أعجبني</label>
+                <label><input type="radio" name="q5" value="عادي"> عادي</label>
+                <label><input type="radio" name="q5" value="لم يعجبني"> لم يعجبني</label>
+            </div>
+
+            <div class="question">
+                <p>6. هل تفضل/ين الحصول على فعاليات أخرى يقدمها طلاب من صف ثامن؟ *</p>
+                <label><input type="radio" name="q6" value="نعم بالتأكيد"> نعم بالتأكيد</label>
+                <label><input type="radio" name="q6" value="ربما"> ربما</label>
+                <label><input type="radio" name="q6" value="لا"> لا</label>
+            </div>
+
+            <h3>القسم الثالث: تأثير الورشة</h3>
+
+            <div class="question">
+                <p>7. بعد الورشة، هل أصبحت أكثر وعيًا بمخاطر التدخين والكحول؟ *</p>
+                <label><input type="radio" name="q7" value="نعم جدًا"> نعم جدًا</label>
+                <label><input type="radio" name="q7" value="نعم"> نعم</label>
+                <label><input type="radio" name="q7" value="قليلًا"> قليلًا</label>
+                <label><input type="radio" name="q7" value="لا"> لا</label>
+            </div>
+
+            <div class="question">
+                <p>8. هل تنصح/ين بإقامة مثل هذه الورشات مرة أخرى؟ *</p>
+                <label><input type="radio" name="q8" value="نعم"> نعم</label>
+                <label><input type="radio" name="q8" value="لا"> لا</label>
+            </div>
+
+            <h3>سؤال أخير</h3>
+
+            <div class="question">
+                <p>9. في أي موضوع تحب/ين أن تحصل/ي على ورشة إضافية في المستقبل؟ *</p>
+                <textarea name="q9" rows="4"></textarea>
+            </div>
+
+            <div id="error-message"></div>
+
+            <button type="submit">إرسال الاستبيان</button>
+
+        </form>
+    </div>
+
+    <div id="thankyou-section" class="hidden">
+        <h1>✅ شكراً لمشاركتك!</h1>
+        <p>تم إرسال إجابتك بنجاح.</p>
+
+        <div class="counter-box">
+            <h3>📊 عدد المشاركات:</h3>
+            <p id="counter">0</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

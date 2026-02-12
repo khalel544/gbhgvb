@@ -1,0 +1,118 @@
+/* الخطوط والألوان */
+body {
+    font-family: 'Tahoma', sans-serif;
+    background: linear-gradient(to right, #f9f5ef, #e6dbc8); /* خلفية كريمية */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: #fff8f0; /* بيج فاتح */
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* العناوين */
+h1 {
+    text-align: center;
+    color: #8b5e3c; /* بني غامق */
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+h3 {
+    color: #6e4b30; /* بني متوسط */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* الأسئلة */
+.question p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+    background-color: #f5e7d4; /* كريمي فاتح */
+}
+
+label:hover {
+    background-color: #edd9b5; /* كريمي متوسط عند المرور */
+}
+
+/* textarea */
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #d4bfa3; /* بني فاتح */
+    resize: vertical;
+    font-size: 16px;
+    background-color: #fff8f0;
+}
+
+/* زر الإرسال */
+button {
+    background-color: #8b5e3c; /* بني غامق */
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #a76d48; /* بني أفتح عند المرور */
+    transform: translateY(-2px);
+}
+
+/* رسالة الخطأ */
+#error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* صفحة الشكر */
+#thankyou-section {
+    text-align: center;
+    color: #6e4b30;
+}
+
+.counter-box {
+    background-color: #f3e6d1; /* بيج فاتح */
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+}
+
+/* استجابة الهاتف */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
