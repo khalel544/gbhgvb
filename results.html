@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>لوحة نتائج الاستبيان</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f5f5f5;
+padding:20px;
+}
+.card{
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h1{color:#333;}
+</style>
+
+</head>
+<body>
+
+<h1>📊 لوحة نتائج الطلاب</h1>
+
+<div id="results"></div>
+
+<script>
+
+let data = JSON.parse(localStorage.getItem("surveyData")) || [];
+
+if(data.length===0){
+document.getElementById("results").innerHTML="<h3>لا توجد نتائج بعد</h3>";
+}
+
+data.forEach((student,index)=>{
+
+document.getElementById("results").innerHTML += `
+<div class="card">
+<h3>طالب رقم ${index+1}</h3>
+
+<p><b>1:</b> ${student.q1}</p>
+<p><b>2:</b> ${student.q2}</p>
+<p><b>3:</b> ${student.q3}</p>
+<p><b>4:</b> ${student.q4}</p>
+<p><b>5:</b> ${student.q5}</p>
+<p><b>6:</b> ${student.q6}</p>
+<p><b>7:</b> ${student.q7}</p>
+<p><b>8:</b> ${student.q8}</p>
+<p><b>اقتراح:</b> ${student.q9}</p>
+
+</div>
+`;
+
+});
+
+</script>
+
+</body>
+</html>
