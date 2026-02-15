@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>لوحة تحكم الاستبيان</title>
+
+<style>
+
+body{
+font-family:system-ui;
+background:#f4f6fb;
+padding:30px;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+width:250px;
+}
+
+.card{
+background:white;
+padding:18px;
+margin:15px 0;
+border-radius:14px;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+.name{
+font-size:20px;
+font-weight:bold;
+color:#2b2b2b;
+margin-bottom:10px;
+}
+
+.count{
+font-size:18px;
+background:#222;
+color:white;
+padding:8px 14px;
+border-radius:8px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="top">
+<h1>📊 لوحة نتائج الاستبيان</h1>
+<div class="count">عدد الطلاب: <span id="total">0</span></div>
+</div>
+
+<input id="search" placeholder="ابحث باسم الطالب...">
+
+<div id="results"></div>
+
+<script>
+
+let data = JSON.parse(localStorage.getItem("surveyData")) || [];
+
+document.getElementById("total").textContent = data.length;
+
+function render(list){
+
+let box = document.getElementById("results");
+box.innerHTML="";
+
+if(list.length===0){
+box.innerHTML="<h3>لا توجد نتائج</h3>";
+return;
+}
+
+list.forEach((s,i)=>{
+
+box.innerHTML+=`
+<div class="card">
+
+<div class="name">
+${s.studentName || "بدون اسم"} — الصف ${s.studentClass || "-"}
+</div>
+
+<p>1️⃣ ${s.q1}</p>
+<p>2️⃣ ${s.q2}</p>
+<p>3️⃣ ${s.q3}</p>
+<p>4️⃣ ${s.q4}</p>
+<p>5️⃣ ${s.q5}</p>
+<p>6️⃣ ${s.q6}</p>
+<p>7️⃣ ${s.q7}</p>
+<p>8️⃣ ${s.q8}</p>
+<p>💬 ${s.q9}</p>
+
+</div>
+`;
+
+});
+
+}
+
+render(data);
+
+// البحث الفوري
+document.getElementById("search").addEventListener("input",e=>{
+
+let text = e.target.value.trim();
+
+let filtered = data.filter(s=>
+(s.studentName || "").includes(text)
+);
+
+render(filtered);
+
+});
+
+</script>
+
+</body>
+</html>
